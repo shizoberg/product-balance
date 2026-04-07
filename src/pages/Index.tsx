@@ -22,7 +22,7 @@ const Index = () => {
         <HeroSection />
       </div>
       <ReviewsSection />
-      <StatsBar />
+      
       <div className="container">
         <div className="k5-reveal text-center pt-12">
           <a
