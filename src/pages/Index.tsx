@@ -3,7 +3,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import UrgencyBar from "@/components/UrgencyBar";
 import HeroSection from "@/components/HeroSection";
 import ReviewsSection from "@/components/ReviewsSection";
-import StatsBar from "@/components/StatsBar";
+
 import VideoTestimonials from "@/components/VideoTestimonials";
 import BeforeAfter from "@/components/BeforeAfter";
 import IngredientsSection from "@/components/IngredientsSection";
@@ -22,7 +22,7 @@ const Index = () => {
         <HeroSection />
       </div>
       <ReviewsSection />
-      <StatsBar />
+      
       <div className="container">
         <div className="k5-reveal text-center pt-12">
           <a
