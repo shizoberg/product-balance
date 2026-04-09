@@ -13,7 +13,13 @@ const HeroSection = () => {
         }}
       />
       <div className="relative z-[2] text-center px-5 py-16 max-w-[680px]">
-        <div className="k5-reveal" ref={counter.ref}>
+        <h1 className="k5-reveal text-2xl md:text-3xl font-extrabold text-primary-foreground mb-1 tracking-tight">
+          .li Balance
+        </h1>
+        <p className="k5-reveal k5-reveal-d1 text-sm md:text-base font-medium text-primary-foreground/70 mb-6 tracking-wide">
+          Döngü Dönemi Desteği
+        </p>
+        <div className="k5-reveal k5-reveal-d2" ref={counter.ref}>
           <span className="text-[72px] font-extrabold leading-none tracking-[-2px] bg-gradient-to-br from-primary-foreground to-primary-foreground/70 bg-clip-text text-transparent">
             {counter.value}
           </span>
