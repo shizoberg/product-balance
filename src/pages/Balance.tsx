@@ -25,11 +25,6 @@ const Balance = () => {
       <ScrollProgress />
       <UrgencyBar />
 
-      {/* Floating cart icon */}
-      <div className="fixed top-3 right-3 z-[90]">
-        <CartDrawer />
-      </div>
-
       <div id="heroSection">
         <HeroSection />
       </div>
