@@ -1,8 +1,17 @@
 import { useRef, useState, useCallback } from "react";
 
+type PlanId = "single" | "subscribe";
+
 const ProductSection = () => {
   const galleryRef = useRef<HTMLDivElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [plan, setPlan] = useState<PlanId>("single");
+
+  const plans: Record<PlanId, { price: number; label: string; sub: string; badge?: string }> = {
+    single: { price: 1400, label: "Tek seferlik satın al", sub: "30 günlük kullanım" },
+    subscribe: { price: 1190, label: "Abone ol & %15 tasarruf", sub: "Her ay otomatik teslim · İstediğin zaman iptal", badge: "EN POPÜLER" },
+  };
+  const active = plans[plan];
 
   const handleScroll = useCallback(() => {
     if (!galleryRef.current) return;
