@@ -10,7 +10,6 @@ import IngredientsSection from "@/components/IngredientsSection";
 import ProductSection from "@/components/ProductSection";
 import StickyATC from "@/components/StickyATC";
 import SocialProofToast from "@/components/SocialProofToast";
-import { CartDrawer } from "@/components/CartDrawer";
 
 /**
  * Alternatif .ki Balance landing page — bağlı: Shopify ürünü ".ki Balance | Döngü Takviyesi"
@@ -25,11 +24,6 @@ const Balance = () => {
     <div className="pb-[72px]">
       <ScrollProgress />
       <UrgencyBar />
-
-      {/* Floating cart icon */}
-      <div className="fixed top-3 right-3 z-[90]">
-        <CartDrawer />
-      </div>
 
       <div id="heroSection">
         <HeroSection />
