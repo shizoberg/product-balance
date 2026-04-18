@@ -134,12 +134,12 @@ const ReviewsSection = () => {
   const visible = expanded ? reviews : reviews.slice(0, 1);
 
   return (
-    <section className="py-14" id="k5Reviews">
+    <section className="py-10 sm:py-12" id="k5Reviews">
       <div className="container">
-        <h2 className="k5-reveal text-center text-[28px] font-bold text-foreground mb-2">
+        <h2 className="k5-reveal text-center text-[22px] sm:text-[24px] font-bold text-foreground mb-1.5">
           Kullanıcılarımız Ne Soruyor?
         </h2>
-        <p className="k5-reveal k5-reveal-d1 text-center text-[15px] text-muted-foreground mb-10 max-w-[520px] mx-auto">
+        <p className="k5-reveal k5-reveal-d1 text-center text-[13.5px] sm:text-[14px] text-muted-foreground mb-8 max-w-[480px] mx-auto">
           Sıkça sorulan sorular ve uzman eczacımızın sesli yanıtları
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
@@ -148,19 +148,17 @@ const ReviewsSection = () => {
           ))}
         </div>
 
-        {!expanded && (
-          <div className="k5-reveal text-center pt-8">
-            <button
-              onClick={() => setExpanded(true)}
-              className="inline-flex items-center gap-2 text-[14px] font-semibold text-primary border-2 border-primary/20 py-3 px-8 rounded-full transition-all hover:bg-primary/5 hover:border-primary/40"
-            >
-              Daha fazlasını gör
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </button>
-          </div>
-        )}
+        <div className="k5-reveal text-center pt-8">
+          <button
+            onClick={() => setExpanded((v) => !v)}
+            className="inline-flex items-center gap-2 text-[14px] font-semibold text-primary border-2 border-primary/20 py-3 px-8 rounded-full transition-all hover:bg-primary/5 hover:border-primary/40"
+          >
+            {expanded ? "Daha az gör" : "Daha fazlasını gör"}
+            <svg className={`w-4 h-4 transition-transform ${expanded ? "rotate-180" : ""}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+        </div>
 
       </div>
     </section>
