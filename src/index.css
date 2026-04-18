@@ -129,3 +129,12 @@
 /* Grab cursor for draggable */
 .grab-cursor { cursor: grab; }
 .grab-cursor:active, .grab-cursor.dragging { cursor: grabbing; }
+
+/* Animation delay utility */
+.animation-delay-2000 { animation-delay: 2s; }
+
+/* Animated gradient background sizing */
+.animate-gradient-shift {
+  background-size: 200% 200%;
+}
+

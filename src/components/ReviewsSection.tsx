@@ -111,8 +111,8 @@ const AudioPlayer = ({ src }: { src: string }) => {
   );
 };
 
-const ReviewCard = ({ review, delay }: { review: typeof reviews[0]; delay: string }) => (
-  <div className={`k5-reveal ${delay} bg-card rounded-[20px] p-7 shadow-sm border border-primary/[0.06] transition-all hover:-translate-y-0.5 hover:shadow-md`}>
+const ReviewCard = ({ review, delay, animate = false }: { review: typeof reviews[0]; delay: string; animate?: boolean }) => (
+  <div className={`${animate ? "animate-fade-in" : `k5-reveal ${delay}`} bg-card rounded-[20px] p-7 shadow-sm border border-primary/[0.06] transition-all hover:-translate-y-0.5 hover:shadow-md`}>
     <div className="flex items-center gap-3.5 mb-4">
       <div className="w-12 h-12 rounded-full bg-secondary border-2 border-primary flex items-center justify-center text-base font-bold text-primary flex-shrink-0">
         {review.initials}
@@ -144,7 +144,7 @@ const ReviewsSection = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           {visible.map((r, i) => (
-            <ReviewCard key={r.initials} review={r} delay={i > 0 ? `k5-reveal-d${i}` : ""} />
+            <ReviewCard key={r.initials} review={r} delay={i > 0 ? `k5-reveal-d${i}` : ""} animate={expanded && i > 0} />
           ))}
         </div>
 
