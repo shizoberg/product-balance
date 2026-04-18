@@ -14,7 +14,16 @@ export function useReveal() {
       { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
 
-    document.querySelectorAll(".k5-reveal").forEach((el) => observer.observe(el));
+    const elements = document.querySelectorAll(".k5-reveal");
+    elements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inView) {
+        el.classList.add("visible");
+      } else {
+        observer.observe(el);
+      }
+    });
     return () => observer.disconnect();
   }, []);
 }
