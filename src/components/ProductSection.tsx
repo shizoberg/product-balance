@@ -73,20 +73,63 @@ const ProductSection = () => {
               <span className="text-[32px] font-extrabold text-primary">₺1.400</span>
               <span className="text-[13px] text-muted-foreground">/ 30 günlük kullanım</span>
             </div>
-            <div className="text-[13px] text-amber font-semibold mb-5 flex items-center gap-1.5">
+            <div className="text-[13px] text-amber font-semibold mb-4 flex items-center gap-1.5">
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
               </svg>
               Stokta sadece 12 adet kaldı
             </div>
+
+            {/* Plan seçimi */}
+            <div className="flex flex-col gap-2.5 mb-4">
+              {(Object.keys(plans) as PlanId[]).map((key) => {
+                const p = plans[key];
+                const selected = plan === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setPlan(key)}
+                    className={`relative text-left rounded-2xl border-2 px-4 py-3.5 transition-all ${
+                      selected
+                        ? "border-primary bg-secondary/60 shadow-[0_4px_16px_rgba(45,27,105,0.12)]"
+                        : "border-border bg-card hover:border-primary/40"
+                    }`}
+                  >
+                    {p.badge && (
+                      <span className="absolute -top-2 right-3 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide">
+                        {p.badge}
+                      </span>
+                    )}
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-colors ${
+                          selected ? "border-primary bg-primary" : "border-border bg-card"
+                        }`}
+                      >
+                        {selected && <span className="w-2 h-2 rounded-full bg-primary-foreground" />}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-baseline justify-between gap-2">
+                          <span className="text-[13.5px] font-bold text-foreground">{p.label}</span>
+                          <span className="text-[15px] font-extrabold text-primary whitespace-nowrap">₺{p.price.toLocaleString("tr-TR")}</span>
+                        </div>
+                        <div className="text-[11.5px] text-muted-foreground mt-0.5">{p.sub}</div>
+                      </div>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
             <button
-              onClick={() => alert("Sepete eklendi!")}
+              onClick={() => alert(plan === "subscribe" ? "Aboneliğin başlatıldı!" : "Sepete eklendi!")}
               className="flex items-center justify-center gap-2.5 w-full bg-primary text-primary-foreground text-base font-bold py-4 px-8 rounded-full min-h-[52px] transition-all hover:bg-primary-medium hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(45,27,105,0.3)] relative overflow-hidden mb-5"
             >
               <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
               </svg>
-              Sepete ekle — ₺1.400
+              {plan === "subscribe" ? "Abone ol" : "Sepete ekle"} — ₺{active.price.toLocaleString("tr-TR")}
             </button>
             <div className="flex gap-4 flex-wrap">
               {[
