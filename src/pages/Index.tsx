@@ -22,20 +22,6 @@ const Index = () => {
         <HeroSection />
       </div>
       <ReviewsSection />
-      
-      <div className="container">
-        <div className="k5-reveal text-center pt-12">
-          <a
-            href="#k5Product"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground text-[15px] font-bold py-4 px-10 rounded-full transition-all hover:bg-primary-medium hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(45,27,105,0.3)] relative overflow-hidden"
-          >
-            Şimdi satın al
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
       <VideoTestimonials />
       <BeforeAfter />
       <IngredientsSection />
