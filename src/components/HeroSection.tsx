@@ -29,10 +29,55 @@ const HeroSection = () => {
           kadın tarafından tercih ediliyor
         </div>
         <div className="k5-reveal k5-reveal-d2 text-xl text-star tracking-[3px] mb-1.5">★★★★★</div>
-        <div className="k5-reveal k5-reveal-d2 text-sm text-primary-foreground/65 font-medium mb-7">
+        <div className="k5-reveal k5-reveal-d2 text-sm text-primary-foreground/65 font-medium mb-6">
           5.0 ortalama puan
         </div>
-        <p className="k5-reveal k5-reveal-d3 text-lg text-primary-foreground/[0.88] leading-relaxed mb-9">
+
+        <div className="k5-reveal k5-reveal-d2 grid grid-cols-3 gap-3 sm:gap-4 max-w-[420px] mx-auto mb-7">
+          {[
+            {
+              label: "Şişkinlik",
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3c3.5 4 6 7 6 11a6 6 0 0 1-12 0c0-4 2.5-7 6-11z" />
+                  <path d="M10 14c.5 1 1.2 1.5 2 1.5s1.5-.5 2-1.5" />
+                </svg>
+              ),
+            },
+            {
+              label: "Kas/sinir gerilimleri",
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" />
+                </svg>
+              ),
+            },
+            {
+              label: "Ruh hali dalgalanmaları",
+              icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0" />
+                  <path d="M3 18c2-3 4-3 6 0s4 3 6 0 4-3 6 0" />
+                </svg>
+              ),
+            },
+          ].map((item) => (
+            <div key={item.label} className="flex flex-col items-center text-center gap-2">
+              <div className="w-11 h-11 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center text-primary-foreground">
+                <div className="w-5 h-5">{item.icon}</div>
+              </div>
+              <span className="text-[11px] leading-tight font-medium text-primary-foreground/85">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <p className="k5-reveal k5-reveal-d3 text-[15px] sm:text-base text-primary-foreground/[0.88] leading-relaxed mb-7 max-w-[460px] mx-auto">
+          PMS döneminde yaşadığın <strong className="font-semibold">şişkinlik</strong>, <strong className="font-semibold">kas/sinir gerilimleri</strong> ve <strong className="font-semibold">ruh hali dalgalanmalarını</strong> desteklemek için geliştirildi.
+        </p>
+
+        <p className="k5-reveal k5-reveal-d3 hidden text-lg text-primary-foreground/[0.88] leading-relaxed mb-9">
           Gerçek kadınlar, gerçek sonuçlar.
           <br />
           Döngüsünü dengeleyenlerin hikayeleri.
