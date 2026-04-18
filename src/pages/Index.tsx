@@ -1,33 +1,24 @@
-import { useReveal } from "@/hooks/useReveal";
-import ScrollProgress from "@/components/ScrollProgress";
-import UrgencyBar from "@/components/UrgencyBar";
-import HeroSection from "@/components/HeroSection";
-import ReviewsSection from "@/components/ReviewsSection";
+import { Link } from "react-router-dom";
 
-import VideoTestimonials from "@/components/VideoTestimonials";
-import BeforeAfter from "@/components/BeforeAfter";
-import IngredientsSection from "@/components/IngredientsSection";
-import ProductSection from "@/components/ProductSection";
-import StickyATC from "@/components/StickyATC";
-import SocialProofToast from "@/components/SocialProofToast";
-
+/**
+ * Ana sayfa — alternatif landing'lere yönlendirme.
+ * Mevcut ana sayfanı korumak için boş tutuldu; gerçek balance sayfası /balance rotasında.
+ */
 const Index = () => {
-  useReveal();
-
   return (
-    <div className="pb-[72px]">
-      <ScrollProgress />
-      <UrgencyBar />
-      <div id="heroSection">
-        <HeroSection />
+    <div className="min-h-screen flex items-center justify-center bg-background p-6">
+      <div className="max-w-md text-center space-y-6">
+        <h1 className="text-3xl font-extrabold text-foreground">Alternatif Sayfalar</h1>
+        <p className="text-muted-foreground">
+          Bu projedeki landing page'lerden birini görmek için aşağıdaki bağlantıyı kullan.
+        </p>
+        <Link
+          to="/balance"
+          className="inline-flex items-center justify-center bg-primary text-primary-foreground font-bold py-3 px-6 rounded-full hover:bg-primary-medium transition-colors"
+        >
+          .ki Balance landing page →
+        </Link>
       </div>
-      <ReviewsSection />
-      <VideoTestimonials />
-      <BeforeAfter />
-      <IngredientsSection />
-      <ProductSection />
-      <StickyATC />
-      <SocialProofToast />
     </div>
   );
 };
