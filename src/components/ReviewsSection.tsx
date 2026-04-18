@@ -144,7 +144,7 @@ const ReviewsSection = () => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
           {visible.map((r, i) => (
-            <ReviewCard key={r.initials} review={r} delay={i > 0 ? `k5-reveal-d${i}` : ""} />
+            <ReviewCard key={r.initials} review={r} delay={i > 0 ? `k5-reveal-d${i}` : ""} animate={expanded && i > 0} />
           ))}
         </div>
 
