@@ -1,4 +1,5 @@
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import sachetImg from "@/assets/sachet.png";
 
 const HeroSection = () => {
   const counter = useAnimatedCounter(2400, 2000, false, "");
@@ -25,9 +26,20 @@ const HeroSection = () => {
           </span>
           <span className="text-[72px] font-extrabold leading-none text-primary-foreground">+</span>
         </div>
-        <div className="k5-reveal k5-reveal-d1 text-base font-medium text-primary-foreground/75 mb-6 tracking-wide">
+        <div className="k5-reveal k5-reveal-d1 text-base font-medium text-primary-foreground/75 mb-5 tracking-wide">
           kadın tarafından tercih ediliyor
         </div>
+
+        <div className="k5-reveal k5-reveal-d2 flex justify-center mb-5">
+          <img
+            src={sachetImg}
+            alt=".ki Balance şase ürünü"
+            className="sachet-spin h-28 w-auto sm:h-32 select-none pointer-events-none"
+            style={{ mixBlendMode: "screen" }}
+            draggable={false}
+          />
+        </div>
+
         <div className="k5-reveal k5-reveal-d2 text-xl text-star tracking-[3px] mb-1.5">★★★★★</div>
         <div className="k5-reveal k5-reveal-d2 text-sm text-primary-foreground/65 font-medium mb-6">
           5.0 ortalama puan

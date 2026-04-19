@@ -138,3 +138,15 @@
   background-size: 200% 200%;
 }
 
+/* Sachet 360 spin */
+@keyframes sachetSpin {
+  0% { transform: perspective(800px) rotateY(0deg); }
+  100% { transform: perspective(800px) rotateY(360deg); }
+}
+.sachet-spin {
+  animation: sachetSpin 6s linear infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.35));
+}
+
