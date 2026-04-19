@@ -1,5 +1,4 @@
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
-import sachetImg from "@/assets/sachet-360.gif";
 
 const HeroSection = () => {
   const counter = useAnimatedCounter(2400, 2000, false, "");
@@ -31,11 +30,13 @@ const HeroSection = () => {
         </div>
 
         <div className="k5-reveal k5-reveal-d2 flex justify-center mb-5">
-          <img
-            src={sachetImg}
-            alt=".ki Balance şase ürünü"
+          <video
+            src="/sachet-360.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="h-28 w-auto sm:h-32 select-none pointer-events-none drop-shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
-            draggable={false}
           />
         </div>
 
