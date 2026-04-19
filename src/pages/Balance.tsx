@@ -9,7 +9,6 @@ import BeforeAfter from "@/components/BeforeAfter";
 import IngredientsSection from "@/components/IngredientsSection";
 import ProductSection from "@/components/ProductSection";
 import StickyATC from "@/components/StickyATC";
-import SocialProofToast from "@/components/SocialProofToast";
 
 /**
  * Alternatif .ki Balance landing page — bağlı: Shopify ürünü ".ki Balance | Döngü Takviyesi"
@@ -34,7 +33,6 @@ const Balance = () => {
       <IngredientsSection />
       <ProductSection product={product} isLoading={isLoading} />
       <StickyATC product={product} isLoading={isLoading} />
-      <SocialProofToast />
     </div>
   );
 };
