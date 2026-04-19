@@ -1,5 +1,4 @@
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
-import sachetGif from "@/assets/sachet-360.gif";
 
 const HeroSection = () => {
   const counter = useAnimatedCounter(2400, 2000, false, "");
@@ -32,7 +31,7 @@ const HeroSection = () => {
 
         <div className="k5-reveal k5-reveal-d2 flex justify-center mb-5">
           <img
-            src={sachetGif}
+            src="/sachet-360.gif"
             alt=".ki Balance şase ürünü"
             className="h-32 w-auto sm:h-40 select-none pointer-events-none drop-shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
             draggable={false}
