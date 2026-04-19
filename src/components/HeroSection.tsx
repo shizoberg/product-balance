@@ -1,5 +1,5 @@
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
-import sachetImg from "@/assets/sachet.png";
+import sachetImg from "@/assets/sachet-360.gif";
 
 const HeroSection = () => {
   const counter = useAnimatedCounter(2400, 2000, false, "");
@@ -34,8 +34,7 @@ const HeroSection = () => {
           <img
             src={sachetImg}
             alt=".ki Balance şase ürünü"
-            className="sachet-spin h-28 w-auto sm:h-32 select-none pointer-events-none"
-            style={{ mixBlendMode: "screen" }}
+            className="h-28 w-auto sm:h-32 select-none pointer-events-none drop-shadow-[0_12px_28px_rgba(0,0,0,0.35)]"
             draggable={false}
           />
         </div>
