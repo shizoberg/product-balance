@@ -68,7 +68,7 @@ const PharmacistAnswer = ({ text }: { text: string }) => (
 );
 
 const ReviewCard = ({ review, delay, animate = false }: { review: typeof reviews[0]; delay: string; animate?: boolean }) => (
-  <div className={`${animate ? "animate-fade-in" : `k5-reveal ${delay}`} bg-white rounded-[20px] p-7 shadow-sm border border-primary/[0.06] transition-all hover:-translate-y-0.5 hover:shadow-md`}>
+  <div className={`${animate ? "animate-fade-in" : delay ? `k5-reveal ${delay}` : ""} bg-white rounded-[20px] p-7 shadow-sm border border-primary/[0.06] transition-all hover:-translate-y-0.5 hover:shadow-md`}>
     <div className="flex items-center gap-3.5 mb-4">
       <div className="w-12 h-12 rounded-full bg-secondary border-2 border-primary flex items-center justify-center text-base font-bold text-primary flex-shrink-0">
         {review.initials}
