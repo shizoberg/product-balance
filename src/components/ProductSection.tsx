@@ -3,7 +3,7 @@ import { Loader2 } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import type { ShopifyProduct } from "@/lib/shopify";
 
-type PlanId = "single" | "subscribe";
+type PlanId = "single" | "triple";
 
 interface ProductSectionProps {
   product: ShopifyProduct | null | undefined;
@@ -27,10 +27,10 @@ const ProductSection = ({ product, isLoading }: ProductSectionProps) => {
       label: "Tek seferlik satın al",
       sub: "30 günlük kullanım",
     },
-    subscribe: {
-      price: Math.round(basePrice * 0.85),
-      label: "Abone ol & %15 tasarruf",
-      sub: "Her ay otomatik teslim · İstediğin zaman iptal",
+    triple: {
+      price: Math.round(basePrice * 3 * 0.85),
+      label: "3'lü paket satın al & %15 tasarruf",
+      sub: "3 aylık kullanım + Eczacı ile 15 dk özel takviye rutini hazırlama hizmeti",
       badge: "EN POPÜLER",
     },
   };
@@ -194,17 +194,17 @@ const ProductSection = ({ product, isLoading }: ProductSectionProps) => {
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                 </svg>
               )}
-              {plan === "subscribe" ? "Abone ol" : "Sepete ekle"} — {currency}
+              {plan === "triple" ? "3'lü Paket Sepete Ekle" : "Sepete ekle"} — {currency}
               {active.price.toLocaleString("tr-TR")}
             </button>
-            <div className="flex gap-4 flex-wrap">
+            <div className="flex items-center justify-center gap-5 sm:gap-6 flex-wrap">
               {[
                 { icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z", label: "Güvenli ödeme" },
                 {
                   icon: "M1 3h15v13H1zM16 8h4l3 3v5h-7V8zM5.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z",
                   label: "Ücretsiz kargo",
                 },
-                { icon: "M20 12V8H6a2 2 0 0 1 0-4h12v4M4 6v12a2 2 0 0 0 2 2h14v-4M18 12a2 2 0 0 0 0 4h4v-4z", label: "Abone özel avantajlar" },
+                { icon: "M20 12V8H6a2 2 0 0 1 0-4h12v4M4 6v12a2 2 0 0 0 2 2h14v-4M18 12a2 2 0 0 0 0 4h4v-4z", label: "Eczacı desteği" },
               ].map((t) => (
                 <div key={t.label} className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
                   <svg className="w-4 h-4 text-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -217,25 +217,8 @@ const ProductSection = ({ product, isLoading }: ProductSectionProps) => {
           </div>
         </div>
 
-        {/* Sertifikalar & ürün bilgisi */}
+        {/* Ürün bilgisi */}
         <div className="k5-reveal mt-12 pt-10 border-t border-border/60 flex flex-col items-center text-center">
-          <div className="flex items-center justify-center gap-7 sm:gap-10 mb-6 flex-wrap">
-            {[
-              { label: "FDA", sub: "Registered Facility" },
-              { label: "Vegan", sub: "Certified" },
-              { label: "GMP", sub: "Good Manufacturing" },
-            ].map((c) => (
-              <div
-                key={c.label}
-                className="w-[72px] h-[72px] rounded-full border-2 border-primary/70 flex flex-col items-center justify-center text-primary px-1"
-              >
-                <span className="text-[15px] font-extrabold leading-none tracking-tight">{c.label}</span>
-                <span className="text-[7.5px] font-semibold uppercase tracking-wider mt-1 leading-tight text-center">
-                  {c.sub}
-                </span>
-              </div>
-            ))}
-          </div>
           <p className="text-[15px] font-bold text-foreground mb-1">
             .Ki Magnezyum ve Hayıt İçeren Takviye Edici Gıda
           </p>
